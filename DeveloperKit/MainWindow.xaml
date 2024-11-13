@@ -1,0 +1,44 @@
+﻿<Window
+    x:Class="DeveloperKit.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DeveloperKit"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:DeveloperKit.ViewModels"
+    Title="DeveloperKit"
+    Width="525"
+    Height="350"
+    Background="#f6fafc"
+    mc:Ignorable="d">
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <DockPanel>
+            <Grid Background="White" DockPanel.Dock="Top">
+                <Menu
+                    Width="100"
+                    Height="25"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Top">
+                    <MenuItem Header="工具箱">
+                        <MenuItem Command="{Binding JavaConfigCommand}" Header="JAVA环境变量配置" />
+                        <MenuItem Command="{Binding QuantumultToShadowrocketCommand}" Header="QuantumultX转Shadowrocket" />
+                    </MenuItem>
+                </Menu>
+            </Grid>
+            <Frame
+                Margin="10"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                BorderThickness="0"
+                DockPanel.Dock="Bottom"
+                JournalEntry.KeepAlive="True"
+                NavigationUIVisibility="Hidden"
+                Source="{Binding Model.FrameUri}" />
+        </DockPanel>
+
+
+    </Grid>
+</Window>

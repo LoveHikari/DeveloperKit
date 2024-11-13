@@ -1,0 +1,61 @@
+﻿<Page
+    x:Class="DeveloperKit.Views.Pages.QuantumultPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DeveloperKit.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:viewModels="clr-namespace:DeveloperKit.ViewModels.Pages"
+    Title="QuantumultPage"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <viewModels:QuantumultViewModel />
+    </Page.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5*" />
+            <ColumnDefinition Width="5*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="9*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="10"
+            Orientation="Vertical">
+            <TextBlock Text="QuantumultX" />
+            <TextBox
+                Height="370"
+                AcceptsReturn="True"
+                AcceptsTab="True"
+                TextWrapping="Wrap" Text="{Binding  Model.QuantumultXText}"
+                VerticalScrollBarVisibility="Auto" />
+        </StackPanel>
+        <Grid
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="10">
+            <TextBlock Text="Shadowrocket" />
+            <TextBox
+                Height="370"
+                AcceptsReturn="True"
+                AcceptsTab="True"
+                TextWrapping="Wrap" Text="{Binding  Model.ShadowrocketText}"
+                VerticalScrollBarVisibility="Auto" />
+        </Grid>
+        <StackPanel
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            VerticalAlignment="Center">
+            <Button
+                Width="70"
+                Height="40"
+                Content="转化" Command="{Binding ConvertCommand}" />
+        </StackPanel>
+    </Grid>
+</Page>
